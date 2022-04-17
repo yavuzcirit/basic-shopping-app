@@ -22,7 +22,7 @@ const CreateProduct = () => {
   }
 
 
-  const notify = () => toast('Item Created successfully.');
+  const notify = () => toast.success('Item Created successfully.');
 
   const createItem =async () => {
     await axios.post('https://62286b649fd6174ca82321f1.mockapi.io/case-study/products', product)
