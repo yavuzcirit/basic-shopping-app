@@ -6,7 +6,7 @@ import Icon from "./Icon"
 
 const Home = () => {
   const [products,setProducts] = useState([]);
-  const [categories, setCategories] = useState([]);
+  const [category, setCategory] = useState("All Products");
 
   useEffect(() => {
    async function fetchData(){
@@ -23,14 +23,25 @@ const Home = () => {
    fetchData();
   }, []);
 
+  const options = ["All Products","Electronic", "Furnitures", "Clothing", "Accessories"]
+
   return (
-    <div className="flex">
-      <div className="flex space-between">
-        <div></div>
-        <div></div>
+    <div className="flex flex-col">
+      <div className="absolute top-[120px] right-[128px]">
+      <select className="w-[180px]" value={category} onChange={(e) => {
+        setCategory(e.target.value)
+      }}>
+        {options.map((item)=>(<option>{item}</option>))}
+      </select>
       </div>
     <div className="grid grid-rows-3 grid-cols-3 gap-1 mb-[400px] bg-slate-100 h-full mx-[auto]  w-full max-w-[1144px] min-h-[1750px] ml-[120px] mb-0">
-       {products
+        {category==="All Products" && products
+        .map((item)=>(
+         <ProductItem avatar={item.avatar} name={item.name} price={item.price} id={item.id} key={item.id}/>
+       ))}
+
+        {products
+        .filter((item)=>item.category===category)
         .map((item)=>(
          <ProductItem avatar={item.avatar} name={item.name} price={item.price} id={item.id} key={item.id}/>
        ))}
