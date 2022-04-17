@@ -31,6 +31,7 @@ const CreateProduct = () => {
       notify();
     })
     .then(routeChange())
+    .then(()=> window.location.reload())
     .catch(function (error) {
       console.log(error);
     });
@@ -54,7 +55,7 @@ const CreateProduct = () => {
   return( 
   <div className="bg-slate-100 h-full  flex w-full max-w-[114.4rem] flex flex-col mb-[200px] mt-[50px] ml-[34%]">
 <form onSubmit={createItem}>
-<input className="flex w-[400px] h-[50px] rounded-xl mb-[20px] pl-[8px]" type='text' placeholder='Product Name' value={product.id} onChange={(e)=>{
+<input className="flex w-[400px] h-[50px] rounded-xl mb-[20px] pl-[8px]" type='text' placeholder='Product ID' value={product.id} onChange={(e)=>{
       setProduct({...product, id: e.target.value} )
     }} required/>
 <input className="flex w-[400px] h-[50px] rounded-xl mb-[20px] pl-[8px]" type='text' placeholder='Product Name' value={product.name} onChange={(e)=>{
