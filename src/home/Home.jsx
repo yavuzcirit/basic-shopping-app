@@ -10,17 +10,18 @@ const Home = () => {
 
   useEffect(() => {
    async function fetchData(){
-     let response=await axios.get('https://62286b649fd6174ca82321f1.mockapi.io/case-study/products/');
-     let myResponse = await response.data;
-     console.log(myResponse)
-     setProducts(myResponse)
-     console.log(myResponse)
+    try {
+      let response=await axios.get('https://62286b649fd6174ca82321f1.mockapi.io/case-study/products/');
+      let myResponse = await response.data;
+      console.log(myResponse)
+      setProducts(myResponse)
+      console.log(myResponse)
+    } catch(error){
+      console.log(error)
+    }
    }
    fetchData();
-  }, []);
-
-
-  
+  }, [products]);
 
   return (
     <div className="flex">
@@ -28,7 +29,7 @@ const Home = () => {
         <div></div>
         <div></div>
       </div>
-    <div className="mt-[40px] grid grid-rows-3 grid-cols-3 gap-16 bg-slate-100 h-full mx-[auto]  w-full max-w-[114.4rem] ml-[120px] mb-0">
+    <div className="grid grid-rows-3 grid-cols-3 gap-1 mb-[400px] bg-slate-100 h-full mx-[auto]  w-full max-w-[1144px] min-h-[1750px] ml-[120px] mb-0">
        {products.map((item)=>(
          <ProductItem avatar={item.avatar} name={item.name} price={item.price} id={item.id} key={item.id}/>
        ))}
