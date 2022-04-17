@@ -11,6 +11,7 @@ const ProductItem = ({avatar, name, price, id}) => {
   const handleDelete = (e) => {
     axios.delete(`https://62286b649fd6174ca82321f1.mockapi.io/case-study/products/${e.target.parentElement.id}`)
       .then((res)=>console.log(res))
+      .then(()=>window.location.reload())
       notify()
   }
 
