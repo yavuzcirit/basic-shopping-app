@@ -34,7 +34,7 @@ const Home = () => {
         {options.map((item)=>(<option>{item}</option>))}
       </select>
       </div>
-    <div className="grid grid-rows-3 grid-cols-3 gap-1 mb-[400px] bg-slate-100 h-full mx-[auto]  w-full max-w-[1144px] min-h-[1750px] ml-[120px] mb-0">
+    <div className="grid grid-rows-3 grid-cols-3 gap-y-4 gap-1 mb-[400px] bg-slate-100 h-full mx-[auto]  w-full max-w-[1144px] min-h-[1750px] ml-[120px] mb-0">
         {category==="All Products" && products
         .map((item)=>(
          <ProductItem avatar={item.avatar} name={item.name} price={item.price} id={item.id} key={item.id}/>
