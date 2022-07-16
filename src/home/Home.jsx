@@ -28,21 +28,23 @@ const Home = () => {
     <div className="flex flex-col">
       <div className="absolute top-[120px] right-[128px]">
         <select
-          className="w-[180px] mr-[30px]"
+          title="Click to Choose Category"
+          clearable
+          className="w-[300px] mr-[100px] h-[60px] rounded-[17px] text-left p-[7px] box-shadow cursor-pointer"
           value={category}
           onChange={(e) => {
             setCategory(e.target.value);
           }}
         >
           <option value="" disabled selected hidden>
-            Please Choose...
+            Choose Category...
           </option>
           {options.map((item) => (
             <option>{item}</option>
           ))}
         </select>
       </div>
-      <div className="grid grid-rows-3 grid-cols-3  bg-slate-100 h-full mx-[auto]  w-full max-w-[1144px] min-h-[1750px] ml-[160px] mb-[400px]">
+      <div className="grid grid-rows-3 grid-cols-3  bg-slate-100 h-full mx-[auto]  w-full max-w-[1144px] min-h-[1750px] ml-[300px] mb-[400px]">
         {category
           ? products.filter((item) => item.category === category).map((item) => <ProductItem avatar={item.avatar} name={item.name} price={item.price} id={item.id} key={item.id} />)
           : products.map((item) => <ProductItem avatar={item.avatar} name={item.name} price={item.price} id={item.id} key={item.id} />)}

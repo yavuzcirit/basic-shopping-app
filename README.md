@@ -20,8 +20,9 @@ npx degit KrishGarg/vite-react-tailwind-jit-template#main
 
 To start the dev server on your machine:
 
-npm run dev
+<!-- *** NPM RUN DEV *** -->
 
+npm run dev
 
 To preview the production build locally:
 
