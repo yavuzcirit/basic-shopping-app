@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const CreateProduct = () => {
@@ -20,8 +19,6 @@ const CreateProduct = () => {
     let path = `/`;
     navigate(path);
   };
-
-  const notify = () => toast.success("Item Created successfully.");
 
   const createItem = async () => {
     await axios
@@ -136,7 +133,6 @@ const CreateProduct = () => {
           Add Product
         </button>
       </form>
-      <Toaster />
     </div>
   );
 };
