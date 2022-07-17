@@ -15,7 +15,7 @@ const ProductItem = ({ avatar, name, price, id }) => {
   };
 
   return (
-    <div className="px-6 pt-4 pb-2 flex flex-col w-[200px] h-[200px] mt-[120px] ml-[34px] cursor-pointer" title="Click to Go to Details" key={id} id={id}>
+    <div className="px-6 pt-4 pb-2 flex flex-col w-[200px] h-[200px] mt-[120px] ml-[34px] cursor-pointer mb-[30px]" title="Click to Go to Details" key={id} id={id}>
       <Link to={`product-details/${id}`}>
         <img src={avatar} className="inline-block bg-gray-200 rounded-[20px] w-[300px] h-[200px] text-sm font-semibold mr-2 mb-2" alt="product" />
         <span className="inline-block rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 w-[180px] h-[50px]">{name}</span>
