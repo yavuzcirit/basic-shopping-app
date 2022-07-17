@@ -87,8 +87,8 @@ const CreateProduct = () => {
           }}
           required
         />
-        <input
-          className="flex w-[400px] h-[125px] rounded-xl mb-[20px] pl-[8px]"
+        <textarea
+          className="flex w-[400px] h-[125px] rounded-xl mb-[20px] pl-[8px] text-left"
           type="text"
           placeholder="Description"
           value={product.description}
